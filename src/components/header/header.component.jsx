@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './header.styles.scss';
@@ -14,6 +15,16 @@ const Header = () => {
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav>
+            <LinkContainer to='/signup'>
+              <Nav.Link>Signup</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/login'>
+              <Nav.Link>Login</Nav.Link>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   )
