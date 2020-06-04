@@ -4,4 +4,9 @@
   font-family: 'Shadows Into Light', cursive;
   text-transform: uppercase;
 }
+
+.nav-links {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 /*# sourceMappingURL=header.styles.css.map */

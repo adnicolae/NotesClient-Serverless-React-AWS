@@ -21,14 +21,14 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar variant="light">
         <Navbar.Brand>
           <Link to='/'>
             Notely ✒
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse className="justify-content-end nav-links">
           <Nav>
             { isAuthenticated 
               ? <>
