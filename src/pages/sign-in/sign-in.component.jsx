@@ -5,18 +5,19 @@ import onError from '../../helpers/onError';
 import LoaderButton from '../../components/loader-button/loader-button.component';
 import { useHistory } from 'react-router-dom';
 import CurrentUserContext from '../../contexts/current-user.context';
+import { useFormFields } from '../../helpers/customHooks';
 import './sign-in.styles.scss';
 
 const SignIn = () => {
   const { setIsAuthenticated } = useContext(CurrentUserContext);
-  const [ credentials, setCredentials ] = useState({ email: '', password: '' });
+  const [ fields, handleFieldChange ] = useFormFields({ email: '', password: '' });
   const [ isLoading, setIsLoading ] = useState(false);
   const history = useHistory();
-  const { email, password } = credentials;
+  const { email, password } = fields;
 
   const handleSubmit = async e => {
     e.preventDefault();
-
+    console.log(e.target);
     setIsLoading(true);
     
     try {
@@ -30,16 +31,10 @@ const SignIn = () => {
     setIsLoading(false);
   }
 
-  const handleChange = e => {
-    const { value, name } = e.target;
-
-    setCredentials({ ...credentials, [name]: value})
-  }
-
   return (
     <div className="sign-in">
       <Form onSubmit={ handleSubmit }>
-        <Form.Group>
+        <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control 
             size="lg"
@@ -47,10 +42,10 @@ const SignIn = () => {
             name="email" 
             placeholder="Email"
             value={ email }
-            onChange={ handleChange } />
+            onChange={ handleFieldChange } />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
             size="lg"
@@ -58,7 +53,7 @@ const SignIn = () => {
             name="password"
             placeholder="Password"
             value={ password }
-            onChange={ handleChange } />
+            onChange={ handleFieldChange } />
         </Form.Group>
         <LoaderButton isLoading={ isLoading } variant="primary" type="submit">
           Sign In
