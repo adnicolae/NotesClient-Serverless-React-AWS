@@ -1,0 +1,9 @@
+.create-note form {
+  padding-top: 15px;
+}
+
+.create-note form #content {
+  height: 300px;
+  font-size: 24px;
+}
+/*# sourceMappingURL=create-note.styles.css.map */

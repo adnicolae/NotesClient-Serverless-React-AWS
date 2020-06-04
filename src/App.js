@@ -11,6 +11,7 @@ import HomePage from './pages/homepage/homepage.component';
 import NotFound from './pages/notfound/notfound.component';
 import SignIn from './pages/sign-in/sign-in.component';
 import SignUp from './pages/sign-up/sign-up.component';
+import CreateNote from './pages/create-note/create-note.component';
 import { Auth } from 'aws-amplify';
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route exact path='/' component={ HomePage } />
           <Route path='/login' component={ SignIn } />
           <Route path='/signup' component={ SignUp } />
+          <Route path='/notes/new' component={ CreateNote } />
           <Route component={ NotFound } />
         </Switch>
       </CurrentUserContext.Provider>

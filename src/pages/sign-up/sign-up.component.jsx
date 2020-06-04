@@ -73,7 +73,7 @@ const SignUp = () => {
             The confirmation code has been sent to your email.
           </Form.Text>
         </Form.Group>
-        <LoaderButton isLoading={ isLoading } variant="primary" type="submit">
+        <LoaderButton block isLoading={ isLoading } variant="primary" type="submit">
           Verify
         </LoaderButton>
       </Form>

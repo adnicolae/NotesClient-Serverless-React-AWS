@@ -31,7 +31,12 @@ const Header = () => {
         <Navbar.Collapse className="justify-content-end">
           <Nav>
             { isAuthenticated 
-              ? <Nav.Link onClick={ handleLogout }>Logout</Nav.Link>
+              ? <>
+                <LinkContainer to='/notes/new'>
+                  <Nav.Link>New Note</Nav.Link>
+                </LinkContainer>
+                <Nav.Link onClick={ handleLogout }>Logout</Nav.Link>
+                </>
               : <>
                   <LinkContainer to='/signup'>
                     <Nav.Link>Signup</Nav.Link>

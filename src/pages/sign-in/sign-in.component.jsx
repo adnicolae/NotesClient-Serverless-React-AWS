@@ -55,7 +55,7 @@ const SignIn = () => {
             value={ password }
             onChange={ handleFieldChange } />
         </Form.Group>
-        <LoaderButton isLoading={ isLoading } variant="primary" type="submit">
+        <LoaderButton block isLoading={ isLoading } variant="primary" type="submit">
           Sign In
         </LoaderButton>
       </Form>

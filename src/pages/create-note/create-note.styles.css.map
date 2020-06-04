@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,YADU,CACV,IAAI,CAAC;EACH,WAAW,EAAE,IAAI;CAMlB;;AARH,AAII,YAJQ,CACV,IAAI,CAGF,QAAQ,CAAC;EACP,MAAM,EAAE,KAAK;EACb,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "create-note.styles.scss"
+    ],
+    "names": [],
+    "file": "create-note.styles.css"
+}
