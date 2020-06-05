@@ -35,6 +35,9 @@ const Header = () => {
                 <LinkContainer to='/notes/new'>
                   <Nav.Link>New Note</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to='/settings'>
+                  <Nav.Link>Settings</Nav.Link>
+                </LinkContainer>
                 <Nav.Link onClick={ handleLogout }>Logout</Nav.Link>
                 </>
               : <>
