@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import AuthenticatedRoute from './components/auth-unauth-routes/auth-route.component';
+import UnauthenticatedRoute from './components/auth-unauth-routes/unauth-route.component';
 import onError from './helpers/onError';
 
 import CurrentUserContext from './contexts/current-user.context';
@@ -43,11 +45,21 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path='/' component={ HomePage } />
-          <Route path='/login' component={ SignIn } />
-          <Route path='/signup' component={ SignUp } />
-          <Route path='/notes/new' component={ CreateNote } />
-          <Route path='/notes/:id' component={ NotePage } />
-          <Route path='/settings' component={ SettingsPage } />
+          <UnauthenticatedRoute path='/login'>
+            <SignIn />
+          </UnauthenticatedRoute>
+          <UnauthenticatedRoute path='/signup'>
+            <SignUp />
+          </UnauthenticatedRoute>
+          <AuthenticatedRoute exact path='/notes/new'>
+            <CreateNote />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path='/notes/:id'>
+            <NotePage />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute exact path='/settings'>
+            <SettingsPage />
+          </AuthenticatedRoute>
           <Route component={ NotFound } />
         </Switch>
       </CurrentUserContext.Provider>

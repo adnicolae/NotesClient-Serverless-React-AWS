@@ -3,7 +3,6 @@ import { Auth } from 'aws-amplify';
 import { Form } from 'react-bootstrap'; 
 import onError from '../../helpers/onError';
 import LoaderButton from '../../components/loader-button/loader-button.component';
-import { useHistory } from 'react-router-dom';
 import CurrentUserContext from '../../contexts/current-user.context';
 import { useFormFields } from '../../helpers/customHooks';
 import './sign-in.styles.scss';
@@ -12,23 +11,20 @@ const SignIn = () => {
   const { setIsAuthenticated } = useContext(CurrentUserContext);
   const [ fields, handleFieldChange ] = useFormFields({ email: '', password: '' });
   const [ isLoading, setIsLoading ] = useState(false);
-  const history = useHistory();
   const { email, password } = fields;
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log(e.target);
+
     setIsLoading(true);
     
     try {
       await Auth.signIn(email, password)
       setIsAuthenticated(true);
-      history.push('/');
     } catch (error) {
       onError(error);
+      setIsLoading(false);
     }
-    
-    setIsLoading(false);
   }
 
   return (

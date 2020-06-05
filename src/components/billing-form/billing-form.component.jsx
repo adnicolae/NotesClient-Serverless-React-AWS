@@ -11,7 +11,7 @@ const BillingForm = ({ isLoading, onSubmit, ...props }) => {
     storage: ''
   });
   const [ isProcessing, setIsProcessing ] = useState(false);
-  const [ isCardComplete, setIsCardComplete ] = useState(false);
+  const [ setIsCardComplete ] = useState(false);
 
   isLoading = isProcessing || isLoading;
 
@@ -28,7 +28,7 @@ const BillingForm = ({ isLoading, onSubmit, ...props }) => {
   }
 
   return (
-    <Form onSubmit={ handleSubmit } className="billing-form" autocomplete="off">
+    <Form onSubmit={ handleSubmit } className="billing-form" autoComplete="off">
       <Form.Group controlId="storage">
         <Form.Label>Storage Preference</Form.Label>
         <Form.Control 

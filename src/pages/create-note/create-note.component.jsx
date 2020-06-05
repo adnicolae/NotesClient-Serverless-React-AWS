@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react'
-import { Form } from 'react-bootstrap'
-import LoaderButton from '../../components/loader-button/loader-button.component'
 import NoteFormGroup from '../../components/note-form-group/note-form-group.component';
 import { useHistory } from 'react-router-dom';
 import config from '../../config/config';
