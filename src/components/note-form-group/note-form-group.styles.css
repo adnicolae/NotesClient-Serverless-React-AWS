@@ -1,0 +1,13 @@
+form {
+  padding-top: 15px;
+}
+
+form #content {
+  height: 300px;
+  font-size: 24px;
+}
+
+form .attachment-link {
+  color: #0000EE;
+}
+/*# sourceMappingURL=note-form-group.styles.css.map */

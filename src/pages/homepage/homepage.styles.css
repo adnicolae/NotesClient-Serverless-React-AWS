@@ -1,0 +1,22 @@
+.homepage {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.landing h1 {
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
+}
+
+.landing p {
+  color: #999;
+}
+
+.notes {
+  margin-top: 20px;
+}
+
+.notes .link {
+  cursor: pointer;
+}
+/*# sourceMappingURL=homepage.styles.css.map */

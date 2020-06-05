@@ -5,7 +5,6 @@ import { ListGroup, Card } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import onError from '../../helpers/onError';
 import { API } from 'aws-amplify';
-import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [ notes, setNotes ] = useState([]);
@@ -45,7 +44,8 @@ const HomePage = () => {
   const Notes = () => (
     <div className="notes">
       <h1>My notes</h1>
-      <LinkContainer key="new" to='/notes/new'>
+      <hr />
+      <LinkContainer className='link' key="new" to='/notes/new'>
         <ListGroup.Item>
           <h4>
             <b>{"\uFF0B"}</b> Create a new note
@@ -62,10 +62,10 @@ const HomePage = () => {
     return notes.map(note => (
       <LinkContainer key={ note.noteId } to={ `/notes/${ note.noteId }` }>
         <Card>
-          <Card.Body>
+          <Card.Body className='link'>
             <Card.Title>{ note.content.trim().split('\n')[0] }</Card.Title>
             <Card.Text>
-              { note.createdAt }
+              {`Created on: ${ new Date(note.createAt).toLocaleString() }`}
             </Card.Text>
           </Card.Body>
         </Card>

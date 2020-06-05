@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import LoaderButton from '../../components/loader-button/loader-button.component'
+import NoteFormGroup from '../../components/note-form-group/note-form-group.component';
 import { useHistory } from 'react-router-dom';
 import config from '../../config/config';
 import { API } from 'aws-amplify';
@@ -18,6 +19,8 @@ const CreateNote = () => {
   const handleFileChange = e => {
     file.current = e.target.files[0];
   }
+
+  const updateContent = e => setContent(e.target.value);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -46,30 +49,14 @@ const CreateNote = () => {
 
   return (
     <div className='create-note'>
-      <Form onSubmit={ handleSubmit }>
-        <Form.Group controlId='content'>
-          <Form.Control 
-            value={ content }
-            as="textarea"
-            onChange={ e => setContent(e.target.value) }
-          />
-        </Form.Group>
-        <Form.Label>Attachment</Form.Label>
-        <Form.Group controlId='file'>
-          <Form.Control 
-            type="file"
-            onChange={ handleFileChange }
-          />
-        </Form.Group>
-        <LoaderButton
-          type="submit"
-          variant="primary"
-          isLoading={ isLoading }
-          block
-        >
-          Create
-        </LoaderButton>
-      </Form>
+      <NoteFormGroup 
+        content={ content }
+        updateContent={ updateContent }
+        handleSubmit={ handleSubmit }
+        handleFileChange={ handleFileChange }
+        isLoading={ isLoading }
+        includeDelete={ false }
+      />
     </div>
   )
 }

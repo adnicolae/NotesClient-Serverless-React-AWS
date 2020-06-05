@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,IAAI;CAUlB;;AAXD,AAGE,IAHE,CAGF,QAAQ,CAAC;EACP,MAAM,EAAE,KAAK;EACb,SAAS,EAAE,IAAI;CAChB;;AANH,AAQE,IARE,CAQF,gBAAgB,CAAC;EACf,KAAK,EAAE,OAAO;CACf",
+    "sources": [
+        "note-form-group.styles.scss"
+    ],
+    "names": [],
+    "file": "note-form-group.styles.css"
+}
